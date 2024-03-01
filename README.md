@@ -13,7 +13,7 @@ The Sugar & Fat-Free Journey Tracker is a web application that helps users track
 
 ## Screenshots
 
-![Screenshot](screenshot.png)
+![Screenshot](Screenshot.png)
 
 ## Getting Started
 
