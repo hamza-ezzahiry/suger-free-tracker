@@ -5,50 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .container {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
+            text-align: left;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin: 0 20px;
+            box-sizing: border-box;
         }
 
         h1 {
             color: #333;
+            margin-bottom: 20px;
         }
 
         p {
-            color: #666;
+            color: #555;
             font-size: 18px;
+            margin-top: 20px;
         }
 
         .highlight {
-            color: red;
+            color: #e44d26;
             font-weight: bold;
         }
 
         input {
-            padding: 8px;
-            margin: 10px 0;
+            padding: 10px;
+            margin: 20px 0;
             font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
         }
     </style>
-    <title>Sugar-Free Journey</title>
+    <title>Sugar & Fat-Free Journey</title>
 </head>
 <body>
     <div class="container">
         <h1>Sugar & Fat-Free Tracker</h1>
-        <label for="startDate">Enter your  start date:</label>
+        <img src="https://static.webteb.net/images/content/tbl_articles_article_23361_93609f9ff30-ba9e-48de-ab29-98d9b6aa6fb3.jpg" alt="Sugar & Fat-Free" />
+        <label for="startDate">Enter your start date:</label>
         <input type="date" id="startDate" value="2024-02-18">
         <p id="result"></p>
     </div>
@@ -66,7 +83,7 @@
         var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
         // Display the result with highlighting
-        document.getElementById('result').innerHTML = 'Congratulations! You have been sugar & fat free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
+        document.getElementById('result').innerHTML = 'Congratulations! You have been sugar & fat-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
 
         // Update the result when the input value changes
         startDateInput.addEventListener('change', function () {
@@ -74,7 +91,7 @@
             timeDifference = new Date() - startDate;
             days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('result').innerHTML = 'Congratulations! You have been sugar-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
+            document.getElementById('result').innerHTML = 'Congratulations! You have been sugar & fat-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
         });
     </script>
 </body>
