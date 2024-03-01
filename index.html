@@ -36,22 +36,30 @@
             color: red;
             font-weight: bold;
         }
+
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
     </style>
     <title>Sugar-Free Journey</title>
 </head>
 <body>
     <div class="container">
         <h1>Sugar-Free Tracker</h1>
+        <label for="startDate">Enter your  start date:</label>
+        <input type="date" id="startDate" value="2024-02-18">
         <p id="result"></p>
     </div>
 
     <script>
-        // Get the start date and current date
-        var startDate = new Date('2024-02-18');
-        var currentDate = new Date();
+        // Get the start date from the input
+        var startDateInput = document.getElementById('startDate');
+        var startDate = new Date(startDateInput.value);
 
         // Calculate the time difference
-        var timeDifference = currentDate - startDate;
+        var timeDifference = new Date() - startDate;
 
         // Calculate days and hours
         var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -59,6 +67,15 @@
 
         // Display the result with highlighting
         document.getElementById('result').innerHTML = 'Congratulations! You have been sugar-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
+
+        // Update the result when the input value changes
+        startDateInput.addEventListener('change', function () {
+            startDate = new Date(startDateInput.value);
+            timeDifference = new Date() - startDate;
+            days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('result').innerHTML = 'Congratulations! You have been sugar-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
+        });
     </script>
 </body>
 </html>
