@@ -83,7 +83,7 @@
         var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
         // Display the result with highlighting
-        document.getElementById('result').innerHTML = 'Congratulations! You have been sugar & fat-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
+        document.getElementById('result').innerHTML = '🎉 Congratulations! You have been sugar & fat-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
 
         // Update the result when the input value changes
         startDateInput.addEventListener('change', function () {
@@ -91,7 +91,7 @@
             timeDifference = new Date() - startDate;
             days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('result').innerHTML = 'Congratulations! You have been sugar & fat-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
+            document.getElementById('result').innerHTML = '🎉 Congratulations! You have been sugar & fat-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
         });
     </script>
 </body>
