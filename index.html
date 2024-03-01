@@ -47,7 +47,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sugar-Free Tracker</h1>
+        <h1>Sugar & Fat-Free Tracker</h1>
         <label for="startDate">Enter your  start date:</label>
         <input type="date" id="startDate" value="2024-02-18">
         <p id="result"></p>
@@ -66,7 +66,7 @@
         var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
         // Display the result with highlighting
-        document.getElementById('result').innerHTML = 'Congratulations! You have been sugar-free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
+        document.getElementById('result').innerHTML = 'Congratulations! You have been sugar & fat free for <span class="highlight">' + days + ' days and ' + hours + ' hours</span>.';
 
         // Update the result when the input value changes
         startDateInput.addEventListener('change', function () {
